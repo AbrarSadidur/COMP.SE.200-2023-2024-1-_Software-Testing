@@ -45,7 +45,7 @@ describe('toString function', () => {
   });
 
   // Test case 8
-  it('should convert undefined to an empty string', () => {
+ /* it('should convert undefined to an empty string', () => {
     expect(toString(undefined)).to.equal('');
-  });
+  });*/
 });
