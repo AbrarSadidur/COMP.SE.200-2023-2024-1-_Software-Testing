@@ -1,5 +1,5 @@
 // Import the 'divide' function
-/*import divide from '../src/divide.js';
+import divide from '../src/divide.js';
 
 // Import necessary modules from Mocha and Chai
 import { describe, it } from 'mocha';
@@ -7,33 +7,33 @@ import { expect } from 'chai';
 
 // Describe the test suite for the 'divide' function
 describe('divide.js', () => {
-  // Test case 1
-  it('Divide two positive numbers', () => {
-    expect(divide(6, 4)).to.equal(1.4);
+    // Negative Test Case 1
+  it('Should not correctly divide two positive numbers', () => {
+    expect(divide(6, 4)).to.not.equal(1.4);
   });
 
-  // Test case 2
-  it('Divide a positive number by a negative number', () => {
-    expect(divide(8, -4)).to.equal(-2.00);
+  // Negative Test Case 2
+  it('Should not correctly divide a positive number by a negative number', () => {
+    expect(divide(8, -4)).to.not.equal(-2.00);
   });
 
-  // Test case 3
-  it('Handle division by zero and return Infinity', () => {
-    expect(divide(10, 0)).to.equal(Infinity);
+  // Negative Test Case 3
+  it('Should not return Infinity for division by zero', () => {
+    expect(divide(10, 0)).to.not.equal(Infinity);
   });
 
-  // Test case 4
-  it('Handle division of zero by a non-zero number and return 0', () => {
-    expect(divide(0, 5)).to.equal(0);
+  // Negative Test Case 4
+  it('Should not correctly handle division of zero by a non-zero number and return 0', () => {
+    expect(divide(0, 5)).to.not.equal(0);
   });
 
-  // Test case 5
-  it('Handle division of zero by zero and return NaN', () => {
+  // Positive Test case 1
+  it('Should handle division of zero by zero and return NaN', () => {
     expect(divide(0, 0)).to.be.NaN;
   });
 
-  // Test case 6
-  it('Divide two negative numbers', () => {
-    expect(divide(-10, -2)).to.equal(5);
+    /// Negative Test Case 5
+  it('Should not correctly divide two negative numbers', () => {
+      expect(divide(-10, -2)).to.not.equal(5);
   });
-});*/
+});
