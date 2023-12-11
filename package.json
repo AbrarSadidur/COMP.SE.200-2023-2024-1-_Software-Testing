@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "test": "mocha 'test/**/*.js' --recursive --exit --reporter=spec",
-    "coverage": "npx c8 --reporter=lcov --reporter=text npx mocha 'test/**/*.js'",
+    "coverage": "c8 mocha | coveralls",
     "coveragelcov": "npx c8 --reporter=lcov npx mocha 'test/**/*.js'"
   },
   "author": "",
