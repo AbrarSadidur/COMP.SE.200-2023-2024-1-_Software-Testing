@@ -6,8 +6,8 @@
   "type": "module",
   "scripts": {
     "test": "mocha 'test/**/*.js' --recursive --exit --reporter=spec",
-    "coverage": "npm run coveragelcov && cat ./coverage/lcov-report.info | coveralls",
-    "coveragelcov": "c8 --reporter=lcov mocha 'test/**/*.js'"
+    "coverage": "c8 report --reporter=text-lcov | coveralls",
+    "coveragelcov": "c8 --reporter=lcov mocha test/**/*.js"
   },
   "author": "",
   "license": "MIT",
@@ -23,8 +23,5 @@
     "mocha-lcov-reporter": "^1.3.0",
     "nyc": "^15.1.0",
     "sinon": "^17.0.1"
-  },
-  "dependencies": {
-    "js-yaml": "^4.1.0"
   }
 }
