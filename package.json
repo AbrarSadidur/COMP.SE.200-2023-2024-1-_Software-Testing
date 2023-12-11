@@ -6,8 +6,8 @@
   "type": "module",
   "scripts": {
     "test": "mocha 'test/**/*.js' --recursive --exit --reporter=spec",
-    "coverage": "c8 mocha | coveralls",
-    "coveragelcov": "c8 -reporter=lcov mocha | coveralls"
+    "coverage": "npx c8 --reporter=lcov --reporter=text npx mocha 'test/**/*.js'",
+    "coveragelcov": "npx c8 --reporter=lcov npx mocha 'test/**/*.js'"
   },
   "author": "",
   "license": "MIT",
