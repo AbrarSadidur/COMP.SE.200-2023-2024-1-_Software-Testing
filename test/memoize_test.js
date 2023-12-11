@@ -1,75 +1,69 @@
 // Import the 'memoize' function
-/*import memoize from '../src/memoize.js';
-
-// Import necessary modules from Mocha and Chai
+import memoize from '../src/memoize.js';
 import { describe, it } from 'mocha';
 import { expect } from 'chai';
 
-// Describe the test suite for the 'memoize' function
-describe('memoize function', () => {
-  // Test case 1
-  it('should memoize the result of the function', () => {
-    const mockFunction = sinon.fake.returns('result');
-    const memoizedFunction = memoize(mockFunction);
+describe('memoize', () => {
+  it('should memoize a function', () => {
+    let callCount = 0;
 
-    // First call should invoke the original function
-    const result1 = memoizedFunction('arg1', 'arg2');
-    expect(result1).to.equal('result');
-    expect(mockFunction.calledOnce).to.be.true;
-
-    // Second call with the same arguments should return the cached result
-    const result2 = memoizedFunction('arg1', 'arg2');
-    expect(result2).to.equal('result');
-    expect(mockFunction.calledOnce).to.be.true;
-
-    // The cache property should be available
-    expect(memoizedFunction.cache instanceof Map).to.be.true;
-  });
-
-  // Test case 2
-  it('should allow custom resolver function', () => {
-    const mockFunction = sinon.fake.returns('result');
-    const resolver = (...args) => args.join('-');
-    const memoizedFunction = memoize(mockFunction, resolver);
-
-    const result1 = memoizedFunction('arg1', 'arg2');
-    expect(result1).to.equal('result');
-    expect(mockFunction.calledOnce).to.be.true;
-
-    const result2 = memoizedFunction('arg1', 'arg2');
-    expect(result2).to.equal('result');
-    expect(mockFunction.calledOnce).to.be.true;
-
-    // The cache key should be based on the custom resolver
-    expect(memoizedFunction.cache.has('arg1-arg2')).to.be.true;
-  });
-
-  // Test case 3
-  it('should handle custom cache constructor', () => {
-    const mockFunction = sinon.fake.returns('result');
-    const CustomCache = class CustomMap extends Map {
-      // Custom cache logic if needed
+    const originalFunction = (a, b) => {
+      callCount++;
+      return a + b;
     };
-    memoize.Cache = CustomCache;
 
-    const memoizedFunction = memoize(mockFunction);
+    const memoizedFunction = memoize(originalFunction);
 
-    const result1 = memoizedFunction('arg1', 'arg2');
-    expect(result1).to.equal('result');
-    expect(memoizedFunction.cache instanceof CustomCache).to.be.true;
+    // First call
+    const result1 = memoizedFunction(2, 3);
+    expect(result1).to.equal(5);
+    expect(callCount).to.equal(1);
+
+    // Second call with the same arguments
+    const result2 = memoizedFunction(2, 3);
+    expect(result2).to.equal(5);
+    expect(callCount).to.equal(1); // Should not increment callCount
+
+    // Third call with different arguments
+    const result3 = memoizedFunction(4, 5);
+    expect(result3).to.equal(9);
+    expect(callCount).to.equal(2); // Should increment callCount
   });
 
-  // Test case 4
-  it('should throw an error if not passed a function', () => {
-    // Memoize requires a function as its first argument
-    expect(() => memoize('not a function')).to.throw(TypeError, 'Expected a function');
+  it('should support a custom resolver function', () => {
+    const resolver = (a, b) => a + '-' + b;
+
+    let callCount = 0;
+    const originalFunction = (a, b) => {
+      callCount++;
+      return a + b;
+    };
+
+    const memoizedFunction = memoize(originalFunction, resolver);
+
+    // First call
+    const result1 = memoizedFunction(2, 3);
+    expect(result1).to.equal(5);
+    expect(callCount).to.equal(1);
+
+    // Second call with the same resolved key
+    const result2 = memoizedFunction(2, 3);
+    expect(result2).to.equal(5);
+    expect(callCount).to.equal(1);
+
+    // Third call with different resolved key
+    const result3 = memoizedFunction(4, 5);
+    expect(result3).to.equal(9);
+    expect(callCount).to.equal(2);
   });
 
-  // Test case 5
-  it('should throw an error if resolver is provided and is not a function', () => {
-    // Resolver, if provided, should be a function
-    const mockFunction = sinon.fake();
-    expect(() => memoize(mockFunction, 'not a function')).to.throw(TypeError, 'Expected a function');
-  });
+  it('should throw an error for invalid input', () => {
+    const invalidInputs = [null, undefined, 42, 'string', {}, []];
+
+    invalidInputs.forEach((invalidInput) => {
+      expect(() => memoize(invalidInput)).to.throw(TypeError, 'Expected a function');
+    });
+ 
 });
-*/
+});
+
