@@ -43,7 +43,7 @@ Our project focuses on [briefly describe the project or its purpose]. The reposi
 ## Group Members
 
 ```
-Member One:
+Member 1:
 - Name: Abrar Morshed
 - Student ID: 152269375
 ```
