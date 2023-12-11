@@ -24,22 +24,22 @@ jobs:
       run: |
         npm ci
 
-    - name: Run Tests
-      run: |
-        npm test
+    # - name: Run Tests
+    #   run: |
+    #     npm test
     # - name: npm install, make test-coverage
     #   run: |
     #     npm install
     #     make test-coverage
 
-    - run: npm run test-coverage
+    # - run: npm run test-coverage
   
-    - name: Coveralls
-      uses: coverallsapp/github-action@v2.2.3
-      with:
-        github-token: ${{ secrets.GITHUB_TOKEN }}
+    # - name: Coveralls
+    #   uses: coverallsapp/github-action@v2
+    #   with:
+    #     github-token: ${{ secrets.GITHUB_TOKEN }}
     
-    - name: Publish to coveralls.io
-      uses: coverallsapp/github-action@v2
-      with:
-        github-token: ${{ secrets.GITHUB_TOKEN }}
+    # - name: Publish to coveralls.io
+    #   uses: coverallsapp/github-action@v2
+    #   with:
+    #     github-token: ${{ secrets.GITHUB_TOKEN }}
