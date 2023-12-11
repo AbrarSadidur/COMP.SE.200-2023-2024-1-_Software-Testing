@@ -7,7 +7,6 @@ on:
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
     steps:
@@ -17,14 +16,14 @@ jobs:
     - name: Setup Node.js
       uses: actions/setup-node@v3
       with:
-        node-version: 14
+        node-version: '16'
 
     - name: Install Dependencies
       run: npm install
 
-    - name: Run Tests 
+    - name: Run tests 
       run: npm test
-        
+       
     - name: Coveralls GitHub Action
       uses: coverallsapp/github-action@v2.2.3
       with:
