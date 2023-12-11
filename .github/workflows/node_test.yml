@@ -25,6 +25,9 @@ jobs:
       run: npm test
 
     - name: Run tests and coverage
+      run: npm run coverage
+      
+    - name: Run tests and coverage
       run: npm test -- --coverage
        
     - name: Coveralls GitHub Action
