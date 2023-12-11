@@ -31,4 +31,24 @@ describe('add.js', () => {
   it('Add zero and a negative number', () => {
     expect(add(0, -4)).to.equal(-4);
   });
+  
+  // Additional Test case 6
+  it('Add two floating-point numbers', () => {
+    expect(add(3.14, 2.86)).to.equal(6);
+  });
+
+  // Additional Test case 7
+  it('Add a positive and a zero', () => {
+    expect(add(5, 0)).to.equal(5);
+  });
+
+  // Additional Test case 8
+  it('Add two large positive numbers', () => {
+    expect(add(999999999, 1)).to.equal(1000000000);
+  });
+
+  // Additional Test case 9
+  it('Add two large negative numbers', () => {
+    expect(add(-999999999, -1)).to.equal(-1000000000);
+  });
 });

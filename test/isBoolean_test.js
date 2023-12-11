@@ -46,4 +46,24 @@ describe('isBoolean.js', () => {
   it('should return false for undefined', () => {
     expect(isBoolean(undefined)).to.be.false;
   });
+
+  // Test case 9
+  it('should return false for a function', () => {
+    expect(isBoolean(() => true)).to.be.false;
+  });
+
+  // Test case 10
+  it('should return false for a symbol', () => {
+    expect(isBoolean(Symbol('test'))).to.be.false;
+  });
+
+  // Test case 11
+  it('should return false for NaN', () => {
+    expect(isBoolean(NaN)).to.be.false;
+  });
+
+  // Test case 12
+  it('should return false for Infinity', () => {
+    expect(isBoolean(Infinity)).to.be.false;
+  });
 });

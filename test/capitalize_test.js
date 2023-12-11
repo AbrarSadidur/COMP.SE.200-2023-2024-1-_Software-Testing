@@ -41,4 +41,19 @@ describe('capitalize.js', () => {
   it('Handle a string with leading and trailing spaces', () => {
     expect(capitalize('  test  ')).to.equal('  test  ');
   });
+  
+  // Additional Test case 8
+  it('Handle a string with mixed case characters', () => {
+    expect(capitalize('MiXeD')).to.equal('Mixed');
+  });
+
+  // Additional Test case 9
+  it('Handle a sentence with mixed case words', () => {
+    expect(capitalize('the qUick brown fox')).to.equal('The quick brown fox');
+  });
+
+  // Additional Test case 10
+  it('Handle a string with non-alphabetic characters', () => {
+    expect(capitalize('123abc')).to.equal('123abc');
+  });
 });
