@@ -14,7 +14,7 @@ Individuals who remove or modify the license file will also carry the consequenc
 
 # COMP.SE.200-2023-2024-1-_Software-Testing
 
-[![Build Status]](https://github.com/AbrarSadidur/COMP.SE.200-2023-2024-1-_Software-Testing/actions)
+[[Build Status]](https://github.com/AbrarSadidur/COMP.SE.200-2023-2024-1-_Software-Testing/actions)
 [![Coverage Status](https://coveralls.io/repos/github/AbrarSadidur/COMP.SE.200-2023-2024-1-_Software-Testing/badge.svg?branch=main)](https://coveralls.io/github/AbrarSadidur/COMP.SE.200-2023-2024-1-_Software-Testing?branch=main)
 
 ## Prerequisites
@@ -42,10 +42,14 @@ Our project focuses on [briefly describe the project or its purpose]. The reposi
 
 ## Group Members
 
+```
 ### Member One:
 - **Name:** Abrar Morshed
 - **Student ID:** 152269375
+```
 
+```
 ### Member Two:
 - **Name:** Md Sadidur Rahman
 - **Student ID:** 152277448
+```
