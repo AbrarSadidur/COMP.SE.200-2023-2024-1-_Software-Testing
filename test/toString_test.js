@@ -6,11 +6,12 @@ import { describe, it } from 'mocha';
 import { expect } from 'chai';
 
 // Describe the test suite for the 'toString' function
-describe('toString function', () => {
-  // Test case 1
- /* it('should convert null to an empty string', () => {
-    expect(toString(null)).to.equal('');
-  });*/
+describe('toString.js', () => {
+  // Negative Test case 1
+it('should not convert a non-null value to an empty string', () => {
+  const nonNullValue = 'test';
+  expect(toString(nonNullValue)).to.not.equal('');
+});
 
   // Test case 2
   it('should preserve the sign of -0', () => {
@@ -44,8 +45,10 @@ describe('toString function', () => {
     expect(toString(false)).to.equal('false');
   });
 
-  // Test case 8
- /* it('should convert undefined to an empty string', () => {
-    expect(toString(undefined)).to.equal('');
-  });*/
+  // Negative Test case 2
+it('should not convert a non-undefined value to an empty string', () => {
+  const nonUndefinedValue = 42;
+  expect(toString(nonUndefinedValue)).to.not.equal('');
+});
+
 });
