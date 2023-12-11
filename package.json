@@ -5,9 +5,10 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "test": "mocha 'test/**/*.js' --recursive --exit --reporter=spec",
-    "coverage": "c8 mocha | coveralls"
-    },
+    "test": "c8 --reporter=lcov --reporter=text node_modules/mocha/bin/mocha 'test/**/*.js'",
+    "coverage": "c8 mocha | coveralls",
+    "coveragelcov": "c8 --reporter=lcov mocha | coveralls" 
+   },
   "author": "",
   "license": "MIT",
   "devDependencies": {
