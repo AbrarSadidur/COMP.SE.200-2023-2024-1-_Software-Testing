@@ -56,4 +56,29 @@ describe('capitalize.js', () => {
   it('Handle a string with non-alphabetic characters', () => {
     expect(capitalize('123abc')).to.equal('123abc');
   });
+
+  it('should capitalize the first character of a string', () => {
+    expect(capitalize('hello')).toBe('Hello')
+    expect(capitalize('world')).toBe('World')
+  })
+
+  it('should convert the remaining characters to lowercase', () => {
+    expect(capitalize('HELLO')).toBe('Hello')
+    expect(capitalize('wORLD')).toBe('World')
+  })
+
+  it('should return an empty string if no argument is provided', () => {
+    expect(capitalize()).toBe('')
+  })
+
+  it('should return the same string if the first character is already capitalized', () => {
+    expect(capitalize('Hello')).toBe('Hello')
+    expect(capitalize('World')).toBe('World')
+  })
+
+  it('should return a string with only the first character capitalized if the input string contains non-alphabetic characters', () => {
+    expect(capitalize('123hello')).toBe('123hello')
+    expect(capitalize('!@#$world')).toBe('!@#$world')
+  })
+  
 });
