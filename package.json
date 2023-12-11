@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "test": "npx mocha --require @babel/register test/**/*.js",
-    "test-coverage": "npx nyc npm test && npx nyc report --reporter=text-lcov"
+    "test-coverage": "nyc npm test && nyc report --reporter=text-lcov > coverage.lcov && cat coverage.lcov | coveralls"
   },
   "author": "",
   "license": "MIT",
@@ -14,6 +14,7 @@
     "@babel/core": "^7.23.5",
     "@babel/register": "^7.22.15",
     "chai": "^4.3.10",
+    "coveralls": "^3.1.1",
     "mocha": "^10.2.0",
     "nyc": "^15.1.0",
     "sinon": "^17.0.1"
