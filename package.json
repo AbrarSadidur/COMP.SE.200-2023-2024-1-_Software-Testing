@@ -5,10 +5,10 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "test": "c8 --reporter=lcov --reporter=text node_modules/mocha/bin/mocha 'test/**/*.js'",
+    "test": "c8 --reporter=lcov --reporter=text mocha 'test/**/*.js'",
     "coverage": "c8 mocha | coveralls",
-    "coveragelcov": "c8 --reporter=lcov mocha | coveralls" 
-   },
+    "coveragelcov": "c8 --reporter=lcov mocha | coveralls"
+  },
   "author": "",
   "license": "MIT",
   "devDependencies": {
