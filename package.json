@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "test": "mocha 'test/**/*.js' --recursive --exit --reporter=spec",
-    "coverage": "npm test && cat ./coverage/lcov.info | coveralls",
+    "coverage": "npm test && coveralls",
     "coveragelcov": "c8 --reporter=lcov mocha test/**/*.js"
   },
   "author": "",
