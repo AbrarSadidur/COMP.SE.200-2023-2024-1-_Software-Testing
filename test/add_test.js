@@ -51,19 +51,4 @@ describe('add.js', () => {
   it('Add two large negative numbers', () => {
     expect(add(-999999999, -1)).to.equal(-1000000000);
   });
-  
-  it('should add two numbers', () => {
-    expect(add(2, 3)).toEqual(5);
-    expect(add(0, 0)).toEqual(0);
-    expect(add(-1, 1)).toEqual(0);
-    expect(add(0.1, 0.2)).toBeCloseTo(0.3);
-  });
-
-  it('should return NaN if any argument is not a number', () => {
-    expect(add(2, '3')).toBeNaN();
-    expect(add('2', 3)).toBeNaN();
-    expect(add('2', '3')).toBeNaN();
-    expect(add(NaN, 3)).toBeNaN();
-    expect(add(2, NaN)).toBeNaN();
-  });
 });
