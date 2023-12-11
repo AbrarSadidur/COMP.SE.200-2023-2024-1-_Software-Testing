@@ -7,7 +7,7 @@ import { expect } from 'chai';
 
 // Describe the test suite for the 'divide' function
 describe('divide.js', () => {
-  // Test case 1
+
 // Negative Test Case 1
 it('Should not incorrectly divide two positive numbers', () => {
   expect(divide(6, 4)).to.not.equal(1.4);
