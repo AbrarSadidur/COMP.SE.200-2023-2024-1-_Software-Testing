@@ -27,10 +27,10 @@ jobs:
     - name: Run Tests
       run: |
         npm test
-    - name: npm install, make test-coverage
-      run: |
-        npm install
-        make test-coverage
+    # - name: npm install, make test-coverage
+    #   run: |
+    #     npm install
+    #     make test-coverage
 
     - run: npm run test-coverage
   
