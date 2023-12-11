@@ -5,15 +5,16 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "test": "c8 --reporter=lcov --reporter=text ./node_modules/.bin/mocha",
+    "test": "c8 --reporter=lcov --reporter=text mocha",
     "coverage": "c8 mocha | coveralls",
-    "coveragelcov": "c8 -reporter=lcov mocha | coveralls"
+    "coveragelcov": "c8 --reporter=lcov mocha | coveralls"
   },
   "author": "",
   "license": "MIT",
   "devDependencies": {
     "@babel/core": "^7.23.5",
     "@babel/register": "^7.22.15",
+    "c8": "^8.0.1",
     "chai": "^4.3.10",
     "coveralls": "^3.1.1",
     "coveralls-next": "^4.2.0",
