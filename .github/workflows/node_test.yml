@@ -24,6 +24,20 @@ jobs:
       run: |
         npm ci
 
+    - name: Install dependencies
+      run: npm install
+  
+    - name: Run tests and coverage
+      run: npm test -- --coverage
+  
+    - name: Upload coverage to Coveralls
+      env:
+          CI: true
+          COVERALLS_REPO_TOKEN: ${{ secrets.COVERALLS_TOKEN }}
+      run: |
+          npm install -g coveralls
+          coveralls
+
     # - name: Run Tests
     #   run: |
     #     npm test
